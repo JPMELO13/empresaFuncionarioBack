@@ -40,7 +40,7 @@ public class DependenteController {
 	}
 	
 	@GetMapping("/dependente/funcionario/{func_id}")
-	public List<Dependente> buscarDependentePorFuncionario(@PathVariable Integer func_id){
+	public List<Dependente> buscarDependentesPorFuncionario(@PathVariable Integer func_id){
 		List<Dependente> deps = dependenteService.buscarDependentesPorFuncionario(func_id);
 		return deps;
 	}

@@ -44,6 +44,7 @@ public class Funcionario {
 	@ManyToOne
 	@JoinColumn(name = "car_id")
 	private Cargo cargo;
+	
 
 	public Integer getFunc_id() {
 		return func_id;

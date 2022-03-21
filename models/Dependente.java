@@ -3,11 +3,15 @@ package empresaFuncionario.models;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -29,7 +33,8 @@ public class Dependente {
 	private Integer depIdade;
 	
 	@JsonIgnore
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "func_id")
 	private Funcionario funcionario;
 
