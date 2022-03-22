@@ -26,6 +26,11 @@ public class DependenteService {
 		Optional<Dependente> dep = dependenteRepository.findById(depId);
 		return dep.orElseThrow();
 	}
+	public Object buscarUmDependenteFunc(Integer depId){
+		Optional<Object> dep = dependenteRepository.DependenteComFunc(depId);
+		System.out.println(dep);
+		return dep.orElseThrow();
+	}
 	
 	public List<Dependente> buscarDependentesPorFuncionario(Integer func_id){
 		List<Dependente> deps = dependenteRepository.buscarDependentesFuncionario(func_id);

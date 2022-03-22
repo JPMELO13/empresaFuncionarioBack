@@ -39,6 +39,12 @@ public class DependenteController {
 		return ResponseEntity.ok().body(dep);
 	}
 	
+	@GetMapping("/dependenteFunc/{depId}")
+	public ResponseEntity<Object> buscarUmDependenteFunc(@PathVariable Integer depId){
+		Object dep = dependenteService.buscarUmDependenteFunc(depId);
+		return ResponseEntity.ok().body(dep);
+	}
+	
 	@GetMapping("/dependente/funcionario/{func_id}")
 	public List<Dependente> buscarDependentesPorFuncionario(@PathVariable Integer func_id){
 		List<Dependente> deps = dependenteService.buscarDependentesPorFuncionario(func_id);
